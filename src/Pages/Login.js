@@ -16,10 +16,10 @@ export default function Login() {
 
     return (
         <ScrollView contentContainerStyle={css.container}>
-            <Image source={require("../../assets/logo.png")} style={css.logo} />
+            <Image source={require("../../assets/logo-tipo.png")} style={css.logo} />
             <TextInput
                 inputMode="email"
-                placeholder="Email"
+                placeholder="Email do Usuário"
                 style={css.input}
                 value={email}
                 onChangeText={(digitado) => setEmail(digitado)}
@@ -27,22 +27,22 @@ export default function Login() {
             />
             <TextInput
                 inputMode="text"
-                placeholder="Password"
+                placeholder="Senha"
                 secureTextEntry={true}
                 style={css.input}
                 value={senha}
                 onChangeText={(digitado) => setSenha(digitado)}
                 placeholderTextColor="white"
             />
+            <TouchableOpacity style={css.btnLogin} onPress={RealizaLogin}>
+                <Text style={css.btnLoginText}>ENTRAR</Text>
+            </TouchableOpacity>
             <View style={css.forgot}>
                 <Text style={css.forgotText}>Esqueceu a senha?</Text>
             </View>
-            <TouchableOpacity style={css.btnLogin} onPress={RealizaLogin}>
-                <Text style={css.btnLoginText}>Log In</Text>
-            </TouchableOpacity>
             {error &&
                 <View style={css.error}>
-                    <Text style={css.errorText}>Revise os campos. Tente novamente!</Text>
+                    <Text style={css.errorText}>Email ou Senha incorretos</Text>
                 </View>
             }
         </ScrollView>
@@ -55,33 +55,35 @@ const css = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         alignContent: "center",
-        backgroundColor: "#191919"
+        backgroundColor: "#87CEFA"
     },
     logo: {
-        width: "60%",
-        resizeMode: "contain"
+        width: 230,
+        height: 150,
+        marginBottom: 15,
+        resizeMode: 'cover', // Ajustado ao tamanho da imagem desejado
     },
     input: {
-        width: "90%",
+        width: "80%",
         height: 50,
-        borderRadius: 10,
+        borderRadius: 15,
         marginBottom: 15,
         padding: 15,
-        backgroundColor: "#262626",
+        backgroundColor: "#0195fd",
         color: "white"
     },
     forgot: {
-        width: "90%",
-        marginTop: 10,
-        justifyContent: "flex-end",
-        alignItems: "flex-end",
+        width: "30%",
+        marginTop: 15,
+        justifyContent: "center",
+        alignItems: "center",
     },
     forgotText: {
-        color: "#0195fd",
+        color: "white",
         fontWeight: "bold"
     },
     btnLogin: {
-        width: "90%",
+        width: "85%",
         height: 50,
         borderWidth: 1,
         borderRadius: 10,

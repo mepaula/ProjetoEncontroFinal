@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, Button } from 'react-native'
 import React from 'react'
 
-export default function Produto({ title, image, description, price, category, rating }) {
+export default function Produto({ title, image, genere, observacao, cor, roupa, desapacerimento, encontro, setPessoa }) {
     return (
         <View style={css.container}>
             <View style={css.boxTitle}>
@@ -12,12 +12,24 @@ export default function Produto({ title, image, description, price, category, ra
                 <Image source={{ uri: image }} style={css.imagem}/>
             </View>
             <View style={css.descriptionBox}>
-                <Text style={css.descriptionText}>{description}</Text>
+                <Text style={css.descriptionText}>{genere}</Text>
+            </View>
+            <View style={css.descriptionBox}>
+                <Text style={css.descriptionText}>{observacao}</Text>
             </View>
             <View style={css.categoryBox}>
-                <Text style={css.categoryText}>{category}</Text>
+                <Text style={css.categoryText}>{cor}</Text>
             </View>
-            
+            <View style={css.categoryBox}>
+                <Text style={css.categoryText}>{roupa}</Text>
+            </View>
+            <View style={css.categoryBox}>
+                <Text style={css.categoryText}>{desapacerimento}</Text>
+            </View>
+            <View style={css.categoryBox}>
+                <Text style={css.categoryText}>{encontro}</Text>
+            </View>           
+            <Button title="Detalhes" onPress={setPessoa} />
         </View>
     )
 }
@@ -27,52 +39,54 @@ const css = StyleSheet.create({
         height: 600
     },
     boxTitle: {
-        width: "100%",
+        width: "85%",
         display: "flex",
         flexDirection: "row",
-        justifyContent: "flex-start",
         alignItems: "center",
         marginBottom: 10,
-        paddingLeft: 5
+        paddingLeft: 30,
     },
     circleAvatar: {
         width: 30,
         height: 30,
-        borderRadius: 50,
+        borderRadius: 90,
         backgroundColor: "white",
-        marginRight: 10
+        marginRight: 15
     },
     title: {
         color: "white",
-        textAlign: "center"
+        textAlign: "center",
+        alignItems:"center"
     },
     boxImage: {
-        width: "100%",
-        height: 390
+        width: "90%",
+        height: 300
     },
     imagem: {
-        width: "100%",
-        height: "100%",
-        resizeMode: "cover"
+        width: "80%",
+        height: "95%",
+        resizeMode: "center"
     },
     categoryBox: {
-        width: "100%",
+        width: "90%",
         marginTop: 15
     },
     descriptionBox: {
-        width: "100%",
-        marginTop: 15,
-        padding: 10
+        width: "90%",
+        marginTop: 5,
+        padding: 5
     },
     descriptionText: {
         color: "white",
-        textAlign: "justify"
+        textAlign: "justify",
+        alignItems: "center"
     },
     categoryBox: {
-        width: "100%",
-        padding: 10
+        width: "90%",
+        padding: 5
     },
     categoryText: {
-        color: "white"
+        color: "white",
+        alignItems: "center"
     }
 })

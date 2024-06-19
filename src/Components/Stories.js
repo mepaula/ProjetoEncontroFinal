@@ -8,11 +8,11 @@ export default function Stories({produtos}) {
       data={produtos}
       renderItem={ ({item}) => 
         <View style={css.story}>
-          <Image source={{ uri: item.image}} style={css.image}/>
+          <Image source={{ uri: item.pessoaFoto}} style={css.image}/>
         </View>
       }
-      keyExtractor={ (item) => item.id }
-      contentContainerStyle={[css.container, { width: produtos.length * 70 }]}
+      keyExtractor={ (item) => item.id_Pessoa }
+      contentContainerStyle={[css.container, { width: produtos.length * 80 }]}
       horizontal={true}
     />
   )
@@ -23,21 +23,21 @@ const css = StyleSheet.create({
         padding: 20,
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center",
         alignItems: "flex-end",
-        gap: 10,
-        marginBottom: 20
+        gap: 20,
+        marginBottom: 40,
+        backgroundColor: "#87CEFA"
     },
     story: {
         width: 60,
-        height: 60,
+        height: 65,
         backgroundColor: "white",
-        borderRadius: 30,
+        borderRadius: 55,
         overflow: "hidden"
     },
     image: {
       width: "100%",
       height: "100%",
-      resizeMode: "cover"
+      resizeMode: "center"
     }
 })
