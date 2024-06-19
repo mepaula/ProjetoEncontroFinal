@@ -68,6 +68,8 @@ export default function CriarObservacao({pessoa}) {
 const style = StyleSheet.create({
     container: {
         backgroundColor: "#87CEFA",
+        width: "100%",
+        height: 50,
         flexGrow: 1,
         color: "white",
         justifyContent: "center",

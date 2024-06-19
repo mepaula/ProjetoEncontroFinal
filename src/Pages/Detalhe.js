@@ -40,8 +40,8 @@ const style = StyleSheet.create({
         color: "white",
         justifyContent: "center",
         alignItens: "center",
-        padding: 35,
-        paddingBottom: 30
+        padding: 45,
+        paddingBottom: 40
     },
     text: {
         color: "black",
